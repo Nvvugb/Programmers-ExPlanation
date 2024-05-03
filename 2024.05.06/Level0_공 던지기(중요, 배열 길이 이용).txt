@@ -1,0 +1,10 @@
+#이러한 문제들은 배열길이와 주어지는 변수를 활용해서 배열 요소에 접근하는 것을 알아야한다.
+def solution(numbers, k):
+    answer = 0
+    n = 2
+    
+    if 2<len(numbers)<100:
+        if 0<k<1000:
+            answer = numbers[2*(k-1)%len(numbers)]
+                    
+    return answer

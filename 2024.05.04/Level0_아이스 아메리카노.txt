@@ -1,0 +1,8 @@
+def solution(money):
+    answer = []
+    
+    if money>0 and money<=1000000:
+        answer.append(int(money/5500))
+        answer.append(money%5500)
+        
+        return answer

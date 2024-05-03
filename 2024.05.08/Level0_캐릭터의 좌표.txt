@@ -1,0 +1,23 @@
+def solution(keyinput, board):
+    answer = []
+    x_Max = board[0]//2
+    y_Max = board[1]//2
+    x = 0
+    y = 0
+    
+    if 0<=len(keyinput)<=50:
+        if 1<=x_Max<=99:
+            if 1<=y_Max<=99:
+                for i in keyinput:
+                    if i == 'left' and x>-x_Max:
+                        x -= 1
+                    elif i == 'right' and x<x_Max:
+                        x += 1
+                    elif i == 'up' and y<y_Max:
+                        y += 1
+                    elif i == 'down' and y>-y_Max:
+                        y -= 1
+                answer.append(x)
+                answer.append(y)
+                
+    return answer

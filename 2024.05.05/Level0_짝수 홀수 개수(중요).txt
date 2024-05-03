@@ -1,0 +1,21 @@
+def solution(num_list):
+    answer = []
+    even = 0
+    odd = 0
+    
+    length = len(num_list)
+    
+    if 1<=length<=100:
+        for i in num_list:
+            if 0<=i<=1000:
+                if i%2 == 0:
+                    even += 1
+                elif i%2 == 1:
+                    odd += 1
+                    
+        #answer.extend([even,odd])
+        #answer += [even, odd]
+        answer.append(even)
+        answer.append(odd)
+        
+        return answer

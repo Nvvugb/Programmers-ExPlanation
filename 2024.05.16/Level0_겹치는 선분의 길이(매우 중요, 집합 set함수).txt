@@ -1,0 +1,18 @@
+#집합을 활용 set() 교집합(&), 합집합 활용(|)
+def solution(lines):
+    answer = 0
+    check = 0
+    line1 = set(i for i in range(lines[0][0], lines[0][1]))
+    line2 = set(i for i in range(lines[1][0], lines[1][1]))
+    line3 = set(i for i in range(lines[2][0], lines[2][1]))
+    
+    if len(lines) == 3:
+        for i in lines:
+            if len(i) == 2:
+                if i[1]-i[0] >= 1:
+                    if -100<=i[0]<i[1]<=100:
+                        check += 1
+    if check == 3:
+        answer = len((line1 & line2)|(line2 & line3)|(line1 & line3))
+            
+    return answer

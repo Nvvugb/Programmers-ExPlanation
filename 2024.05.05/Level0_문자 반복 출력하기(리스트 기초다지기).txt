@@ -1,0 +1,13 @@
+def solution(my_string, n):
+    answer = ''
+    
+    my_List = list(my_string)
+    length = len(my_List)
+    
+    if 2<=length<=5:
+        if 2<=n<=10:
+            for i in range(length):
+                for j in range(n):
+                    answer += my_List[i]
+    
+        return answer

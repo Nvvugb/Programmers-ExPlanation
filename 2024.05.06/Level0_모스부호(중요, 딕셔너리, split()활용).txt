@@ -1,0 +1,18 @@
+def solution(letter):
+    answer = ''
+    morse = {
+        '.-': 'a', '-...': 'b', '-.-.': 'c', '-..': 'd', '.': 'e', '..-.': 'f',
+        '--.': 'g', '....': 'h', '..': 'i', '.---': 'j', '-.-': 'k', '.-..': 'l',
+        '--': 'm', '-.': 'n', '---': 'o', '.--.': 'p', '--.-': 'q', '.-.': 'r',
+        '...': 's', '-': 't', '..-': 'u', '...-': 'v', '.--': 'w', '-..-': 'x',
+        '-.--': 'y', '--..': 'z'
+    }
+    letter_to_List = list(letter.split())
+
+    if 1 <= len(letter_to_List) <= 1000:
+        for i in range(len(letter_to_List)):
+            for key, value in morse.items():
+                if key == letter_to_List[i]:
+                    answer += value
+
+        return answer

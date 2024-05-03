@@ -1,0 +1,32 @@
+def solution(age):
+    answer = ''
+    alphabet_to_number = ['a','b','c','d','e','f','g','h','i','j']
+    save_number = []
+    
+    if 1<=age<=1000:
+        if 1<=age<10:
+            answer += alphabet_to_number[age%10]
+        elif 10<=age<100:
+            answer += alphabet_to_number[age//10]
+            answer += alphabet_to_number[age%10]
+        elif 100<=age<1000:
+            answer += alphabet_to_number[age//100]
+            answer += alphabet_to_number[age%100//10]
+            answer += alphabet_to_number[age%10]
+        elif age == 1000:
+            answer = 'baaa'
+            
+        return answer
+    
+    #또는 아래 코드
+    """
+    def solution(age):
+    answer = ''
+    alpha = {'0':'a', '1':'b', '2':'c', '3':'d', '4':'e', '5':'f',
+            '6':'g', '7':'h', '8':'i', '9':'j'}
+    
+    for i in str(age):
+        answer+=(alpha[i])
+    return answer
+    """
+    

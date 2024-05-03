@@ -1,0 +1,49 @@
+def solution(a, b):
+    answer = 0
+    check = []
+    prime = 0
+    
+    if 0<a<=1000 and 0<b<=1000:
+        #기약분수로 만들어주기
+        n = 2
+        while n<=b:
+            if a%n == 0 and b%n == 0:
+                b /= n
+                a /= n
+            else:
+                n += 1
+        #분모의 소인수 구하기 분모가 1일경우에는 리스트는 비어있음.
+        n = 2
+        while n<=b:
+            if b%n == 0:
+                b /= n
+                check.append(n)
+            else:
+                n += 1
+                
+        check = set(check)
+        for i in check:
+            if i==2 or i==5:
+                prime += 1
+            else:
+                prime -= 2
+        #분모 소인수가 2,5를 가진 경우 + 분모가 1일 경우를 따짐
+        if prime==1 or prime==2 or len(check)==0:
+            answer = 1
+        else:
+            answer = 2
+                
+        return answer
+
+"""
+math 라이브러리에 있는 최대공약수-gcd(), 최소공배수-lcm()이용
+from math import gcd
+
+def solution(a, b):
+    b = b / gcd(a, b)
+    for i in [2, 5]: -> ()가 아닌 [a,b]는 a나 b로 나눔 리스트형태를 이용
+        while not b % i:
+            b //= i
+
+    return 1 if b == 1 else 2
+"""

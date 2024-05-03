@@ -1,0 +1,14 @@
+def solution(array):
+    answer = 0
+    length = len(array)
+    length_check = 0
+    
+    if(length>0 and length<100) and (length%2 == 1):
+        for i in array:
+            if(i>-1000 and i<1000):
+                length_check = length_check+1
+        if(length_check == length):
+            array.sort()
+            answer = array[length//2]
+                
+        return answer

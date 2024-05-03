@@ -1,0 +1,32 @@
+def solution(numer1, denom1, numer2, denom2):
+    answer = []
+    numer3 = 0
+    denom3 = 0
+    divide = 0
+    compare = 0
+
+    if (numer1 > 0 and numer1 < 1000):
+        if (denom1 > 0 and denom1 < 1000):
+            if (numer2 > 0 and numer2 < 1000):
+                if (denom2 > 0 and denom2 < 1000):
+                    numer3 = numer1 * denom2 + numer2 * denom1
+                    denom3 = denom1 * denom2
+
+                    if(numer3 >= denom3):
+                        compare = denom3+1
+                    else:
+                        compare = numer3+1
+
+                    for i in range(1, compare):
+                        if (numer3 %i == 0):
+                            if (denom3 % i == 0):
+                                divide = i
+                                print(divide)
+
+                    numer3 = numer3 // divide
+                    denom3 = denom3 // divide
+
+                    answer.append(numer3)
+                    answer.append(denom3)
+
+                    return answer

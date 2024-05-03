@@ -1,0 +1,35 @@
+def solution(array):
+    answer = 0
+    length = len(array)
+    length_Check = 0
+    frequency = 0
+    count = 0
+
+    if length > 0 and length < 100:
+        for i in array:
+            if(i >= 0 and i < 1000):
+                length_Check = length_Check + 1
+        if length_Check == length:
+            check_Max = [0 for i in range(1000)]
+            array.sort()
+            
+            for i in array:
+                check_Max[i] = check_Max[i] + 1
+            print(check_Max)
+            
+            temp = 0
+            for i in range(1000):
+                if(check_Max[i] > temp):
+                    frequency = i # 빈도수가 많은 값을 frequency에 할당
+                    temp = check_Max[i] # 최고 빈도수 값을 temp에 할당
+                    
+            for i in range(1000): # 최고 빈도수 값이 2개이상이면 -1을 반환하도록 설정
+                if check_Max[i] == temp:
+                    count = count+1
+                    if count >= 2:
+                        frequency = -1
+
+            print(frequency)
+            answer = frequency
+
+            return answer

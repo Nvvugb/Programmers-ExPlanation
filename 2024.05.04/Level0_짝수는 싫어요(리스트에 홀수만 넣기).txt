@@ -1,0 +1,10 @@
+def solution(n):
+    answer = []
+    
+    if n>=1 and n<=100:
+        for i in range(n+1):
+            if i%2 == 1:
+                answer.append(i)
+        answer.sort()
+    
+        return answer

@@ -1,0 +1,22 @@
+#수학 조합 : n!/((n-r)!*r!)
+def solution(balls, share):
+    answer = 0
+    n = 1
+    n_r = 1
+    r = 1
+
+    if share <= balls:
+        if 1 <= balls <= 30:
+            if 1 <= share <= 30:
+                for i in range(1, balls + 1):
+                    n *= i
+                print(n)
+                for i in range(1, balls - share + 1):
+                    n_r *= i
+                print(n_r)
+                for i in range(1, share + 1):
+                    r *= i
+                print(r)
+
+            answer = int(n / (n_r * r))
+    return answer

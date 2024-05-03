@@ -1,0 +1,24 @@
+def solution(numbers):
+    answer = 0
+    count = 0
+    mul_P = 0
+    mul_N = 0
+    
+    """
+    일일이 배열 요소들을 곱하지 말고 리스트를 정렬하고 
+    음수 곱일 경우와 양수 곱일 경우를 따져서 비교만 하면 된다.
+    """
+    if 2<=len(numbers)<=100:
+        for i in numbers:
+            if -10000<=i<=10000:
+                count += 1
+        if len(numbers) == count:
+            numbers.sort()
+            mul_P = numbers[-1]*numbers[-2]
+            mul_N = numbers[0]*numbers[1]
+            if mul_P >= mul_N:
+                answer= mul_P
+            else:
+                answer = mul_N
+                
+            return answer

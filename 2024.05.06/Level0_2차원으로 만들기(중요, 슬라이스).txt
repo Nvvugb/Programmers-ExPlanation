@@ -1,0 +1,9 @@
+def solution(num_list, n):
+    answer = []
+    
+    if len(num_list)%n == 0:
+        if 0<=len(num_list)<=150:
+            if 2<=n and n<len(num_list):
+                for i in range(0, len(num_list), n):
+                    answer.append(num_list[i:i+n])
+        return answer

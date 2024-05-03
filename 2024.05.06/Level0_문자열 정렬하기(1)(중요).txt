@@ -1,0 +1,23 @@
+def solution(my_string):
+    answer = []
+    my_string_to_List = list(my_string)
+    number_List = ['0','1','2','3','4','5','6','7','8','9']
+    if 1<=len(my_string)<=100:
+        for i in number_List:
+            for j in my_string_to_List:
+                if i == j:
+                    answer.append(int(i))
+        answer.sort()
+        return answer
+
+"""
+# isdigit() 함수를 이용한 코딩(숫자인지 문자인지 판별해줌)
+def solution(my_string):
+    answer = []
+    for i in my_string:
+        if i.isdigit() is True:
+            answer.append(int(i))
+    answer.sort()
+    return answer
+"""
+  

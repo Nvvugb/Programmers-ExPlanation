@@ -1,0 +1,21 @@
+def solution(sides):
+    answer = 0
+    length_Check = 0
+    long = max(sides)
+    short = min(sides)
+    
+    for i in sides:
+        if 1<=i<=1000:
+            length_Check += 1
+        
+    if length_Check == 2:
+        for i in range(long-short, long+1):
+            if long-short<i<=long:
+                answer += 1
+        
+        #위에서 long과 같은 변을 추가했으므로 중복발생을 막기위해 long<i<long+short으로 해주기
+        for i in range(long, long+short):
+            if long<i<long+short:
+                answer += 1
+    
+    return answer

@@ -1,0 +1,45 @@
+def solution(a, b):
+    answer = 0
+    check = []
+    prime = 0
+    
+    if 0<a<=1000 and 0<b<=1000:
+        n = 2
+        while n<=b:
+            if a%n == 0 and b%n == 0:
+                b /= n
+                a /= n
+            else:
+                n += 1
+        n = 2
+        while n<=b:
+            if b%n == 0:
+                b /= n
+                check.append(n)
+            else:
+                n += 1
+                
+        check = set(check)
+        for i in check:
+            if i==2 or i==5:
+                prime += 1
+            else:
+                prime -= 2
+        if prime==1 or prime==2 or len(check) == 0:
+            answer = 1
+        else:
+            answer = 2
+                
+        return answer
+"""
+from math import gcd
+math 라이브러리에 있는 최대공약수(gcd()), 최소공배수(lcm())를 이용하여 풀이.
+
+def solution(a, b):
+    b = b / gcd(a, b)
+    for i in [2, 5]:
+        while not b % i:
+            b //= i
+
+    return 1 if b == 1 else 2
+"""

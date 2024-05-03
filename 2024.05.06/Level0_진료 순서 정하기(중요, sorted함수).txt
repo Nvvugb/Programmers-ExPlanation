@@ -1,0 +1,29 @@
+def solution(emergency):
+    answer = []
+    
+    length = len(emergency)
+    length_Check = 0
+    
+    for i in emergency:
+        if 1<=i<=100:
+            length_Check += 1
+    
+    if length_Check == length:
+        answer = list(0 for i in range(length))
+        for i in range(length):
+            answer[emergency.index(max(emergency))] = i+1
+            emergency[emergency.index(max(emergency))] = 0
+            
+        return answer
+
+"""
+또는 아래 코드
+def solution(emergency):
+    temp = sorted(emergency, reverse = True) #크기가 큰 순서대로 정렬
+    answer = []
+    
+    for i in emergency: #크기 순서에 따른 순서값 부여
+        answer.append(temp.index(i)+1)
+        
+    return answer
+"""

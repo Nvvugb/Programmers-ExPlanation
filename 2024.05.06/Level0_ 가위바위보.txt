@@ -1,0 +1,15 @@
+def solution(rsp):
+    answer = ''
+    
+    rsp_to_List = list(rsp)
+    
+    if 0<len(rsp_to_List)<=100:
+        for i in range(len(rsp_to_List)):
+            if rsp_to_List[i] == '0':
+                answer += "5"
+            elif rsp_to_List[i] == '2':
+                answer += "0"
+            elif rsp_to_List[i] == '5':
+                answer += "2"
+        
+        return answer

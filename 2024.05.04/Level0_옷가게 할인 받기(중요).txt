@@ -1,0 +1,17 @@
+def solution(price):
+    answer = 0
+    
+    #돈 계산은 중요하니 소수점까지 따진 후 마지막에 없애주기 
+    if price>=10 and price<=1000000:
+        if 10<=price<100000:
+            price = price
+        elif 100000<=price<300000:
+            price = price-price*5/100
+        elif 300000<=price<500000:
+            price = price-price*10/100
+        elif price>=500000:
+            price = price-price*20/100
+            
+        answer = int(price)
+        
+        return answer

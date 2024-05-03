@@ -1,0 +1,8 @@
+def solution(strlist):
+    answer = []
+    
+    if 1<=len(strlist)<=100:
+        for i in strlist:
+            answer.append(len(i))
+    
+        return answer

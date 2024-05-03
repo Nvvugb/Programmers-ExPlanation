@@ -1,0 +1,19 @@
+def solution(dots):
+    answer = 0
+    count = 0
+    x_Max = 0
+    y_Max = 0
+    
+    #절대값 abs() 사용
+    if len(dots) == 4:
+        for dots2 in dots:
+            if len(dots2) == 2:
+                for i in range(len(dots2)):
+                    if -256<dots2[i]<256:
+                        count += 1
+        if count == 8:
+            x_Max = max([x[0] for x in dots]) - min([x[0] for x in dots])
+            y_Max = max([y[1] for y in dots]) - min([y[1] for y in dots])
+            
+            answer = x_Max*y_Max
+    return answer

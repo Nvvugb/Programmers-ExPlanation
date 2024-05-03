@@ -1,0 +1,18 @@
+def solution(n):
+    answer = 0
+    pizza = []
+    
+    if n>=1 and n<=100:
+        if n%6 == 0:
+            answer = n//6
+        else: #여기서부터는 n과 6의 최소공배수를 구해야한다.
+            for i in range(n*6+1):
+                if i%6 == 0:
+                    if i%n == 0:
+                        pizza.append(i)
+            print(pizza) #최소공배수 리스트
+            
+            #최소공배수//6은 필요한 피자 판 수    
+            answer = pizza[1]//6
+            
+    	return answer

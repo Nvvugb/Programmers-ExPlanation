@@ -1,0 +1,29 @@
+def solution(polynomial):
+    answer = ''
+    term = 0
+    number = 0
+    
+    polynomial_to_List = list(polynomial.split(' + '))
+
+    if 0<len(polynomial)<50:
+        for i in polynomial_to_List:
+            if 'x' in i:
+                if len(i) == 1:
+                    term += 1
+                else:
+                    term += int(i.replace('x',''))
+            elif 0<len(i)<3:
+                number += int(i)
+        if number != 0 and term != 0 and term != 1:
+            answer = str(term)+'x'+' + '+str(number)
+        elif term == 1:
+            if number != 0:
+                answer = 'x'+' + '+str(number)
+            else:
+                answer = 'x'
+        elif term == 0:
+            answer = str(number)
+        elif number == 0:
+            answer = str(term)+'x'
+        
+        return answer

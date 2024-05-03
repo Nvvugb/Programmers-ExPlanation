@@ -1,0 +1,11 @@
+def solution(my_string, letter)
+    answer = ''
+    
+    length = len(my_string)
+    
+    if 1=length=100
+        # 무조건 할당을 해주어야한다. strip(),replace()를 사용시 기존 문자열은 변하지 않는다.
+        answer = my_string.replace(letter, )
+        
+        
+        return answer

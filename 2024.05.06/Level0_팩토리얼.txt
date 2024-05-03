@@ -1,0 +1,14 @@
+def solution(n):
+    answer = 0
+    temp = 1
+    
+    if 0<n<=3628800:
+        for i in range(1, n+1):
+            temp *= i
+            if temp>n:
+                answer = i-1
+                break
+            elif temp == n:
+                answer = i
+                break
+    return answer

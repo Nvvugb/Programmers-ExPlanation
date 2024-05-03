@@ -1,0 +1,12 @@
+def solution(hp):
+    answer = 0
+    
+    if 0<=hp<=1000:
+        #개미 군단은 소수점으로 쪼갤 수 없으니 //를 사용했다.
+        answer += hp//5
+        hp = hp%5
+        answer += hp//3
+        hp = hp%3
+        answer += hp
+        
+        return answer

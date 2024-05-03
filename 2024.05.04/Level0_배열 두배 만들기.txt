@@ -1,0 +1,11 @@
+def solution(numbers):
+    answer = []
+    
+    length = len(numbers)
+    
+    if(length>=1 and length<=1000):
+        for takeout in numbers:
+            if(takeout>=-10000 and takeout<=10000):
+                answer.append(takeout*2)
+            
+    return answer

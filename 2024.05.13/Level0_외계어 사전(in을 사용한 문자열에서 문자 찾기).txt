@@ -1,0 +1,24 @@
+def solution(spell, dic):
+    answer = 0
+    check = 0
+    temp = 0
+    
+    if 2<=len(spell)<=10:
+        if 1<=len(dic)<=10:
+            for i in dic:
+                if 1<=len(i)<=10:
+                    for j in spell:
+                        if j in i:
+                            check += 1
+                            print(i)
+                    if check == len(spell):
+                        temp += 1
+                    else:
+                        check = 0
+            if temp>0:
+                answer = 1
+            else:
+                answer = 2
+                
+            return answer
+           

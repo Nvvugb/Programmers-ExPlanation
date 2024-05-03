@@ -1,0 +1,17 @@
+def solution(dot):
+    answer = 0
+    
+    if len(dot) == 2:
+        i = dot[0]
+        j = dot[1]
+        if((-500<=i<0) or (0<i<=500)) and ((-500<=j<0) or (0<j<=500)):
+            if 0<i and 0<j:
+                answer = 1
+            elif i<0 and 0<j:
+                answer = 2
+            elif i<0 and j<0:
+                answer = 3
+            elif i>0 and j<0:
+                answer = 4
+                
+        return answer

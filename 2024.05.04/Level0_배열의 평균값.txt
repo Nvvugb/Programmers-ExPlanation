@@ -1,0 +1,12 @@
+def solution(numbers):
+    answer = 0
+    length = len(numbers)
+    
+    if length>=1 and length<=100:
+        sum = 0
+        for i in numbers:
+            if i>=0 and i<=1000:
+                sum = sum + i
+        answer = sum/length
+        
+        return answer
